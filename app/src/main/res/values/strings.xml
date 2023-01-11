@@ -1,0 +1,75 @@
+<resources>
+    <string name="app_name">INTERSEM</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="message_error_sesion">SESION EXPIRADA</string>
+    <string name="message_error_services_upload">TU SESIÓN EXPIRÓ Y TIENES SERVICIOS SIN GUARDAR EN EL SERVIDOR, CONECTATE A INTERNET PARA PODER GUARDAR.</string>
+    <string name="message_error_size_fotos">Solo puedes tomar dos fotografias como maximo</string>
+    <string name="sdib">Desarrollado por Servicios en Desarrollos Informaticos del Bajio</string>
+    <string name="message_error">Error al tomar la fotografia, contacte con el administrador del sistema</string>
+    <string name="message_error_api">Error al consultar el servidor. Contacte con su administrador de sistema</string>
+    <string name="title_activity_actyvity_main">ActyvityMain</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <array name="material_calendar_months_array">
+        <item>Enero</item>
+        <item>Febrero</item>
+        <item>Marzo</item>
+        <item>Abril</item>
+        <item>Mayo</item>
+        <item>Junio</item>
+        <item>Julio</item>
+        <item>Agosto</item>
+        <item>Septiembre</item>
+        <item>Octubre</item>
+        <item>Noviembre</item>
+        <item>Diciembre</item>
+    </array>
+
+    <string name="material_calendar_today_button">Hoy</string>
+    <string name="material_calendar_positive_button">OK</string>
+    <string name="material_calendar_negative_button">Cancelar</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="servicios">Servicios</string>
+    <string name="agenda">Agenda</string>
+    <string name="message_desarrollo">Desarrollado por SDIB</string>
+    <string name="message_login_datos">Usuario y Contraseña no pueden estar vacios</string>
+    <string name="message_consultar_reporte">Se debe ingresar el numero de reporte</string>
+    <string name="meesage_error_pdf">Se genero un error al generar los pdfs</string>
+    <string name="message_not_data">No hay servicios almacenados</string>
+    <string name="message_error_ftp">Error al subir los archivos al servidor FTP</string>
+    <string name="message_not_data_service">El servicio buscado no existe en el sistema</string>
+    <string name="message_help">Las fotografias de las fases de Bitacora , Gafet y Refacción deberan de ser seleccionadas en la pantalla de visualización de fotografias para ser mostrada en el reporte. /n Solo se deben de checkear una foto de las fases mencionadas</string>
+    <string name="message_not_services">Actualmente no tienes servicios asiganados</string>
+    <string name="message_not_service">No tienes ningun servicio, para la fecha selecionada</string>
+    <string name="numero_de_servicio">Numero de Servicio</string>
+    <string name="tipo_de_servicio">Tipo de Servicio:</string>
+    <string name="tipo_de_reporte">Tipo de Reporte:</string>
+    <string name="observaciones_finales_del_servicio">Observaciones Finales del Servicio</string>
+    <string name="meesage_internet">No se tiene conexion a Internet</string>
+    <string name="agregar_servicio">Agregar Servicio</string>
+    <string name="title_activity_archivos_auxiliares">ArchivosAuxiliaresActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="actualizar_archivos">Actualizar Archivos</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+
+
+    -->
+</resources>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:cardBackgroundColor="@color/blue_intersem"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/btnCerrar"
+                android:layout_width="wrap_content"
+                android:layout_height="37dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="8dp"
+                android:background="@null"
+                android:padding="8dp"
+                android:src="@drawable/ic_baseline_save_24" />
+            <TextView
+                android:id="@+id/btnEliminar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="8dp"
+                android:textStyle="bold"
+                android:text="Eliminar"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+    <ImageView
+        android:id="@+id/imgFotografia"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="400dp">
+    </ImageView>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+        <ImageButton
+            android:id="@+id/btnRotar"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_baseline_rotate_right_24"
+            android:background="@color/blue_intersem">
+        </ImageButton>
+    </RelativeLayout>
+</LinearLayout>

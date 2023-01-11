@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp"
+    android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_margin="4dp"
+                android:layout_weight="0.5"
+                app:hintTextColor="@color/blue_intersem"
+                app:boxStrokeColor="@color/blue_intersem"
+                android:layout_height="wrap_content"
+                android:hint="Numero de Servicio">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtNumeroServicio"
+                    android:focusable="false"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_margin="4dp"
+                android:layout_weight="0.3"
+                app:hintTextColor="@color/blue_intersem"
+                app:boxStrokeColor="@color/blue_intersem"
+                android:layout_height="wrap_content"
+                android:hint="Formato de Impresión">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtFormatoImpresion"
+                    android:focusable="false"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+</LinearLayout>

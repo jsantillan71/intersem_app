@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/ic_help"
+        android:icon="@drawable/ic_baseline_help_24"
+        app:showAsAction="ifRoom|never"
+        android:title="Ayuda" />
+    <item
+        android:id="@+id/ic_view_images"
+        android:icon="@drawable/icono_vista_previa"
+        app:showAsAction="ifRoom|never"
+        android:title="Vista Previa" />
+</menu>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.intersem.sdib">
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_i"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@drawable/ic_i"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.INTERSEM"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".ui.services.activities.ServiceUpdateActivity"></activity>
+        <activity android:name=".ui.agenda.activities.CalendarActivity" android:label="Agenda" />
+        <activity
+            android:name=".ui.agenda.activities.AgendaActivty"
+            android:label="Agenda Servicios" />
+        <activity
+            android:name=".ui.archivos_auxiliares.activities.ArchivosAuxiliaresActivity"
+            android:label="Archivos Auxiliares">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.principal.activities.ActivityMain"
+            android:label="Inicio" />
+        <activity android:name=".ui.services.activities.ViewPdfActivity" />
+        <activity
+            android:name=".ui.services.activities.AddServiceActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+
+        <uses-library
+            android:name="com.google.android.wearable"
+            android:required="false" />
+        <!--
+               Set to true if your app is Standalone, that is, it does not require the handheld
+               app to run.
+        -->
+        <meta-data
+            android:name="com.google.android.wearable.standalone"
+            android:value="true" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+        <activity
+            android:name=".ui.services.fragments.FinalyObservationsFragment"
+            android:label="Observaciones finales"
+            tools:ignore="Instantiatable" />
+        <activity
+            android:name=".ui.login.activities.LoginActivity"
+            android:label="INTERSEM"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.services.activities.ServiciosActivity"
+            android:label="Servicios" />
+        <activity
+            android:name=".ui.splashscreen.activities.SplashScreenActivity"
+            android:label="INTERSEM">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.intersem.sdib.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+
+</manifest>
