@@ -18,6 +18,7 @@ public class PdfServices {
     final ServiceRequest servicio_selecionado;
 
     String  name_pdf;
+    String employe_gafete = "";
     PdfControl pdf_control;
     String [] path_pdf = {null, null, null};
 
@@ -28,6 +29,9 @@ public class PdfServices {
         this.detallesArray = detallesArray;
         this.servicio_selecionado = servicio_selecionado;
         this.context = context;
+        if(servicio_selecionado.getEmpleado_gafete().trim() != ""){
+            this.employe_gafete = servicio_selecionado.getEmpleado_gafete();
+        }
         seleccionarPedidos();
         iniciarPdf();
         agregarFotos();
@@ -146,7 +150,7 @@ public class PdfServices {
                         if(contador > 0){
                             pdf_control.AddTableImgTwoColumns(
                                     path_images_pdf_0, 5f, 25.51f, 25.51f, 14.17f, (int)(4138.31), (int)(2097.50), 18.58f
-                                    ,servicios_array_two);
+                                    ,servicios_array_two,this.employe_gafete);
                         }
                     }
                 }
@@ -176,7 +180,8 @@ public class PdfServices {
                         //Verificamos si es el ultimo
                         if(contador > 0){
                             pdf_control.AddTableImgThreeColumns(
-                                    path_images_pdf_2, -4f, 28.51f,(int)(3061.206), (int)(2947.828), 18.58f,servicios_array
+                                    path_images_pdf_2, -4f, 28.51f,(int)(3061.206), (int)(2947.828), 18.58f,
+                                    servicios_array, this.employe_gafete
                             );
                         }
                         pdf_control.addLineaDivisora();
@@ -196,7 +201,7 @@ public class PdfServices {
                     if(contador == 3){
                         pdf_control.AddTableImgThreeColumnsEvidencia(
                                 path_images_pdf_3, -25f, 5f,  (int)(2947.828), (int)(2947.828), 18.58f
-                        ,servicios_array_evidencia);
+                        ,servicios_array_evidencia, this.employe_gafete);
                         path_images_pdf_3[0] = null;
                         path_images_pdf_3[1] = null;
                         path_images_pdf_3[2] = null;
@@ -209,7 +214,7 @@ public class PdfServices {
 
                             pdf_control.AddTableImgThreeColumnsEvidencia(
                                     path_images_pdf_3, -25f, 5f,  (int)(2947.828), (int)(2947.828), 18.58f
-                                    ,servicios_array_evidencia);
+                                    ,servicios_array_evidencia,this.employe_gafete);
                         }
                         pdf_control.addLineaDivisora();
                     }

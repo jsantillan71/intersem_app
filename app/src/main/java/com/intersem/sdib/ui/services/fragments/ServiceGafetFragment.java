@@ -67,6 +67,7 @@ public class ServiceGafetFragment extends Fragment  implements Step {
     private GridLayoutManager gridLayoutManager;
     private int tipo_fotografia = 9;
     private Spinner cmbEmpleados;
+    private int current_empleado;
     private static final String TAG = "MyActivity";
 
 
@@ -107,6 +108,7 @@ public class ServiceGafetFragment extends Fragment  implements Step {
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
                 Empleado mSelected = (Empleado) parentView.getItemAtPosition(position);
                 int empleado_id = mSelected.getEmpleado_id();
+                current_empleado = empleado_id;
                 if (empleado_id==0){
                     return;
                 }
@@ -313,6 +315,13 @@ public class ServiceGafetFragment extends Fragment  implements Step {
 
         }
          */
+        //actualizamos el nombre del empleado seleccionado
+        String empleado_gafete = "";
+        if(current_empleado>0 && arrayListFotografia.size() > 0){
+            empleado_gafete = cmbEmpleados.getSelectedItem().toString();
+        }
+        ((AddServiceActivity) getActivity()).serviceRequest.setEmpleado_gafete(empleado_gafete);
+        dataBaseService.ModificarEmpleadoGafete(((AddServiceActivity) getActivity()).serviceRequest);
         return null;
     }
 

@@ -49,6 +49,16 @@ public class ServiceRequest {
     private String estado;
     private String clientes_datos;
     private String gasto;
+    private String empleado_gafete;
+
+
+    public String getEmpleado_gafete() {
+        return empleado_gafete;
+    }
+
+    public void setEmpleado_gafete(String empleado_gafete) {
+        this.empleado_gafete = empleado_gafete;
+    }
 
     public String getPath_pdf_inverso() {
         return path_pdf_inverso;
@@ -564,5 +574,6 @@ public class ServiceRequest {
         public void setTipo_fotografia(int tipo_fotografia) {
             this.tipo_fotografia = tipo_fotografia;
         }
+
     }
 }

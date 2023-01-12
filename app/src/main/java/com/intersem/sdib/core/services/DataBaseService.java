@@ -81,6 +81,7 @@ public class DataBaseService {
         values.put(ScriptDataBase.Servicio.CAMBS, servicio.getCabms());
         values.put(ScriptDataBase.Servicio.EQUIPO_ID, servicio.getEquipo_id());
         values.put(ScriptDataBase.Servicio.GASTO, servicio.getGasto());
+        values.put(ScriptDataBase.Servicio.EMPLEADO_GAFETE, servicio.getEmpleado_gafete());
         int id = (int)scvmDatabase.getWritableDatabase().insert(ScriptDataBase.Servicio.TABLE_NAME, null, values);
         return id;
     }
@@ -126,6 +127,14 @@ public class DataBaseService {
         values.put(ScriptDataBase.Servicio.NO_REPORTE, servicio.getNumero_reporte());
         values.put(ScriptDataBase.Servicio.REPORTE_SUBIR, servicio.getReporte_subir());
         values.put(ScriptDataBase.Servicio.EQUIPO_ID, servicio.getEquipo_id());
+        scvmDatabase.getWritableDatabase().update(ScriptDataBase.Servicio.TABLE_NAME,values,"_id ="+ servicio.getId(),null);
+        return servicio;
+    }
+
+    public ServiceRequest ModificarEmpleadoGafete(ServiceRequest servicio){
+
+        ContentValues values = new ContentValues();
+        values.put(ScriptDataBase.Servicio.EMPLEADO_GAFETE, servicio.getEmpleado_gafete());
         scvmDatabase.getWritableDatabase().update(ScriptDataBase.Servicio.TABLE_NAME,values,"_id ="+ servicio.getId(),null);
         return servicio;
     }

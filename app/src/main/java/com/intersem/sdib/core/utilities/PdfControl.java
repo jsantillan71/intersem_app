@@ -223,7 +223,15 @@ public class PdfControl {
 
     public void AddTableImgTwoColumns(Bitmap[] images_path, float margin_1_1, float margin_2_1,
                                       float margin_1_2, float margin_2_2, int img_width, int img_height,
-                                      float spacingAfter,ServiceRequest.Fotografia[] fotografias) {
+                                      float spacingAfter,ServiceRequest.Fotografia[] fotografias){
+        AddTableImgTwoColumns(images_path, margin_1_1, margin_2_1,
+         margin_1_2, margin_2_2, img_width, img_height,
+         spacingAfter, fotografias,"");
+    }
+
+    public void AddTableImgTwoColumns(Bitmap[] images_path, float margin_1_1, float margin_2_1,
+                                      float margin_1_2, float margin_2_2, int img_width, int img_height,
+                                      float spacingAfter,ServiceRequest.Fotografia[] fotografias, String employe_gafete) {
         try {
             paragraph = new Paragraph();
             paragraph.setFont(fText);
@@ -297,7 +305,25 @@ public class PdfControl {
                 pdfPCell.setHorizontalAlignment(Element.ALIGN_LEFT);
                 pdfPCell.setHorizontalAlignment(Element.ALIGN_LEFT);
                 pdfPTable.addCell(pdfPCell);
-            } else {
+            }
+            else if(employe_gafete != ""){
+                //Crea celda vacia
+                PdfPCell cell_blank = new PdfPCell();
+                cell_blank.setBorder(Rectangle.NO_BORDER);
+                pdfPTable.addCell(cell_blank);
+                //Crear firma de empleado
+                Paragraph gafete_paragraph = new Paragraph();
+                gafete_paragraph.setFont(fTitle);
+                gafete_paragraph.add(employe_gafete+"\n\n\n\n");
+                gafete_paragraph.add("__________________\n");
+                gafete_paragraph.add("Firma del responsable");
+                PdfPCell cell_title = new PdfPCell(gafete_paragraph);
+                cell_title.setBorder(Rectangle.NO_BORDER);
+                pdfPTable.addCell(cell_title);
+
+
+            }
+            else {
                 PdfPCell cell_blank = new PdfPCell();
                 cell_blank.setBorder(Rectangle.NO_BORDER);
                 pdfPTable.addCell(cell_blank);
@@ -333,7 +359,16 @@ public class PdfControl {
 
     public void AddTableImgThreeColumns(Bitmap[] images_path, float margin_1_1, float margin_2_1,
                                         int img_width, int img_height,
-                                        float spacingAfter, ServiceRequest.Fotografia[] fotografias) {
+                                        float spacingAfter, ServiceRequest.Fotografia[] fotografias){
+        AddTableImgThreeColumns(images_path, margin_1_1, margin_2_1,
+                                 img_width, img_height,
+                                spacingAfter, fotografias,"");
+    }
+
+    public void AddTableImgThreeColumns(Bitmap[] images_path, float margin_1_1, float margin_2_1,
+                                        int img_width, int img_height,
+                                        float spacingAfter, ServiceRequest.Fotografia[] fotografias,
+                                        String employe_gafete) {
         try {
             paragraph = new Paragraph();
             paragraph.setFont(fText);
@@ -387,7 +422,7 @@ public class PdfControl {
 
                 pdfPCell.setBorder(Rectangle.NO_BORDER);
                 pdfPTable.addCell(pdfPCell);
-            } else {
+            } else if(employe_gafete == ""){
                 PdfPCell cell_blank = new PdfPCell();
                 cell_blank.setBorder(Rectangle.NO_BORDER);
                 pdfPTable.addCell(cell_blank);
@@ -416,10 +451,30 @@ public class PdfControl {
 
                 pdfPCell.setBorder(Rectangle.NO_BORDER);
                 pdfPTable.addCell(pdfPCell);
-            } else {
+            } else if(employe_gafete == "") {
                 PdfPCell cell_blank = new PdfPCell();
                 cell_blank.setBorder(Rectangle.NO_BORDER);
                 pdfPTable.addCell(cell_blank);
+            }
+
+            if((images_path[2] == null || images_path[1] == null) && employe_gafete != ""){
+                //Crear firma de empleado
+                Paragraph gafete_paragraph = new Paragraph();
+                //gafete_paragraph.setFont(fTitle);
+                gafete_paragraph.add(employe_gafete+"\n\n\n\n\n\n\n\n");
+                gafete_paragraph.add("__________________\n");
+                gafete_paragraph.add("Firma del responsable");
+                PdfPCell cell_title = new PdfPCell(gafete_paragraph);
+                cell_title.setPaddingLeft(margin_1_1);
+                cell_title.setPaddingRight(margin_2_1);
+                cell_title.setPaddingTop(11f);
+                cell_title.setBorder(Rectangle.NO_BORDER);
+                pdfPTable.addCell(cell_title);
+                if(images_path[2] == null && images_path[1] == null){
+                    PdfPCell cell_blank = new PdfPCell();
+                    cell_blank.setBorder(Rectangle.NO_BORDER);
+                    pdfPTable.addCell(cell_blank);
+                }
             }
 
             paragraph.add(pdfPTable);
@@ -432,6 +487,13 @@ public class PdfControl {
 
     public void AddTableImgThreeColumnsEvidencia(Bitmap[] images_path, float margien_left, float margien_rigth, int img_width, int img_height,
                                                  float spacingAfter, ServiceRequest.Fotografia[] fotografias) {
+        AddTableImgThreeColumnsEvidencia(images_path, margien_left, margien_rigth, img_width, img_height,
+                                        spacingAfter, fotografias,"");
+    }
+
+    public void AddTableImgThreeColumnsEvidencia(Bitmap[] images_path, float margien_left, float margien_rigth, int img_width, int img_height,
+                                                 float spacingAfter, ServiceRequest.Fotografia[] fotografias,
+                                                 String employe_gafete) {
         try{
             paragraph = new Paragraph();
             paragraph.setFont(fText);
@@ -472,7 +534,7 @@ public class PdfControl {
 
                 pdfPCell.setBorder(Rectangle.NO_BORDER);
                 pdfPTable.addCell(pdfPCell);
-            }else{
+            }else if(employe_gafete == "") {
                 PdfPCell cell_blank = new PdfPCell();
                 cell_blank.setBorder(Rectangle.NO_BORDER);
                 pdfPTable.addCell(cell_blank);
@@ -495,10 +557,29 @@ public class PdfControl {
 
                 pdfPCell.setBorder(Rectangle.NO_BORDER);
                 pdfPTable.addCell(pdfPCell);
-            }else{
+            }else if(employe_gafete == "") {
                 PdfPCell cell_blank = new PdfPCell();
                 cell_blank.setBorder(Rectangle.NO_BORDER);
                 pdfPTable.addCell(cell_blank);
+            }
+
+            if((images_path[2] == null || images_path[1] == null) && employe_gafete != ""){
+                //Crear firma de empleado
+                Paragraph gafete_paragraph = new Paragraph();
+                //gafete_paragraph.setFont(fTitle);
+                gafete_paragraph.add(employe_gafete+"\n\n\n\n\n\n\n\n");
+                gafete_paragraph.add("__________________\n");
+                gafete_paragraph.add("Firma del responsable");
+                PdfPCell cell_title = new PdfPCell(gafete_paragraph);
+
+                cell_title.setPaddingTop(11f);
+                cell_title.setBorder(Rectangle.NO_BORDER);
+                pdfPTable.addCell(cell_title);
+                if(images_path[2] == null && images_path[1] == null){
+                    PdfPCell cell_blank = new PdfPCell();
+                    cell_blank.setBorder(Rectangle.NO_BORDER);
+                    pdfPTable.addCell(cell_blank);
+                }
             }
 
             //Se agregan celdas de descripcion
@@ -566,6 +647,25 @@ public class PdfControl {
             document.add(paragraph);
         }catch (Exception ex){
             Log.e("createTable", ex.toString());
+        }
+    }
+
+    public void addEmployeSignature(String Employe) {
+        try {
+            PdfPTable pdfPTable = new PdfPTable(1);
+            PdfPCell pdfPCell;
+            paragraph = new Paragraph();
+            paragraph.setFont(fTitle);
+            paragraph.add(Employe+"\n\n\n\n\n\n");
+            paragraph.add("__________________\n");
+            paragraph.add("Firma del responsable");
+            pdfPCell = new PdfPCell(paragraph);
+            pdfPCell.setPaddingLeft(15f);
+            pdfPCell.setBorder(Rectangle.NO_BORDER);
+            pdfPTable.addCell(pdfPCell);
+            document.add(pdfPTable);
+        } catch (DocumentException e) {
+            e.printStackTrace();
         }
     }
 }

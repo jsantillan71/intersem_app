@@ -55,6 +55,7 @@ public class ScriptDataBase {
         public static final String CAMBS = "cambs";
         public static final String EQUIPO_ID = "equipo_id";
         public static final String GASTO = "gasto_servicio";
+        public static final String EMPLEADO_GAFETE = "empleado_gafete";
         //Datos solamnete de la tabla de servicios
         public static final String CLIENTE_DATOS = "cliente_datos";
         public static final String FECHA_SERVICIO = "fecha_servicio";
@@ -223,7 +224,9 @@ public class ScriptDataBase {
                 Servicio.REPORTE_SUBIR + " " + INT_TYPE + "," +
                 Servicio.CAMBS + " " + STRING_TYPE + "," +
                 Servicio.EQUIPO_ID + " " + INT_TYPE + "," +
-                Servicio.GASTO + " " + STRING_TYPE +")" ;
+                Servicio.GASTO + " " + STRING_TYPE + "," +
+                Servicio.EMPLEADO_GAFETE + " " + STRING_TYPE +
+                ")" ;
     }
 
     public static String CREATE_DETALLE(){
