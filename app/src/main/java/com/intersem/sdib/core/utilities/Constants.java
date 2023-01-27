@@ -70,8 +70,8 @@ public class Constants {
     //region AccesosIntersem
     public static String url_servidor_ftp = ENVIROMENT == "PROD" ? "intersem.synology.me" :"192.168.1.66";
     public static int url_servidor_ftp_port = 21;
-    public static String usuario_servidor_ftp = ENVIROMENT == "PROD" ?"SDIB":"android";
-    public static String contrasenia_servidor_ftp = ENVIROMENT == "PROD" ?"#Intersem21":"......";
+    public static String usuario_servidor_ftp = ENVIROMENT == "PROD" ?"apk":"android";
+    public static String contrasenia_servidor_ftp = ENVIROMENT == "PROD" ?"AppMovil2023":"......";
     //endregion
 
     //region Credential
@@ -183,7 +183,7 @@ public class Constants {
         SimpleDateFormat getShortYearFormat = new SimpleDateFormat("yy");
         String shortYear = getShortYearFormat.format(date);
 
-        String tipo_formato =  toTitleCase(obtenerFormato(tipo));
+        String tipo_formato =  obtenerFormato(tipo);
 
         String path = get_carpeta_server()+CARPETAS_PDFS_SERVER +"/"+ tipo_formato + "/";
         switch (tipo) {
@@ -235,7 +235,7 @@ public class Constants {
 
     public static String generar_path_imagen_server(int tipo, String numero_reporte, int contador , int tipo_servicio ) {
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-        String tipo_formato =  toTitleCase(obtenerFormato(tipo_servicio));
+        String tipo_formato =  obtenerFormato(tipo_servicio);
         Date date = new Date();
         SimpleDateFormat getYearFormat = new SimpleDateFormat("yyyy");
         String currentYear = getYearFormat.format(date);
