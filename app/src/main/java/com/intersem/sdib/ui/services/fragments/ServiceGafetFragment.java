@@ -310,7 +310,7 @@ public class ServiceGafetFragment extends Fragment  implements Step {
     public VerificationError verifyStep() {
         /*
         if(arrayListFotografia.size() < 2){
-            return new VerificationError("Se deben llenar dos fotografias como minimo");
+            return new VerificationError("Se debe llenar una fotografía como mínimo");
         }else{
 
         }

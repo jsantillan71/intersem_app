@@ -184,7 +184,7 @@ public class ServiceTagFragment extends Fragment  implements Step {
     @Override
     public VerificationError verifyStep() {
         if(arrayListFotografia.size() < 1 && Constants.ENVIROMENT != "dev"){
-            return new VerificationError("Se deben llenar dos fotografias como minimo");
+            return new VerificationError("Se debe llenar una fotografía como mínimo");
         }else{
             return null;
         }

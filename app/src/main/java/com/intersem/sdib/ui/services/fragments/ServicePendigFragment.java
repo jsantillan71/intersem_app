@@ -184,8 +184,8 @@ public class ServicePendigFragment extends Fragment  implements Step {
     @Nullable
     @Override
     public VerificationError verifyStep() {
-        if(arrayListFotografia.size() < 2 && Constants.ENVIROMENT != "dev"){
-            return new VerificationError("Se deben llenar dos fotografias como minimo");
+        if(arrayListFotografia.size() < 1 && Constants.ENVIROMENT != "dev"){
+            return new VerificationError("Se debe llenar una fotografía como mínimo");
         }else{
 
             return null;
